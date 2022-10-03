@@ -1,31 +1,16 @@
 "use strict";
-// let greet= () =>{
-//     console.log('hello world');
-// }
-// greet = 'hello'
-let greet;
-greet = () => {
-    console.log('hello sir');
-};
-// const add = (a: number, b: number) => {
-//   console.log(a + b);
+// const logDetails = (uid: string | number, item: string) => {
+//   console.log(`${item} has uid of ${uid}`);
 // };
-// add(5, 10);
-// if no default value for c? (optional parameter)
-// const add = (a: number, b: number, c?: number | string) => {
-//   console.log(a + b);
-//   console.log(c);
+const logDetails = (uid, item) => {
+    console.log(`${item} has uid of ${uid}`);
+};
+// const greet = (user: { name: string; uid: string | number }) => {
+//   console.log(`${user.name} says hello`);
 // };
-// if default value is given no need for c?
-const add = (a, b, c = 10) => {
-    console.log(a + b);
-    console.log(c);
+const greet = (user) => {
+    console.log(`${user.name} says hello`);
 };
-add(5, 10, 'sadf');
-// you can set the type of return after parenthesis with :type
-const minus = (a, b) => {
-    return a + b;
+const greetAgain = (user) => {
+    console.log(`${user.name} says hello`);
 };
-// result type will be set to number
-let result = minus(10, 7);
-// result = 'something else';

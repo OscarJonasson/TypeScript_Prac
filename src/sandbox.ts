@@ -1,39 +1,18 @@
-// let greet= () =>{
-//     console.log('hello world');
-// }
-
-// greet = 'hello'
-
-let greet: Function;
-
-greet = () => {
-  console.log('hello sir');
-};
-
-// const add = (a: number, b: number) => {
-//   console.log(a + b);
+type StringOrNum = string | number;
+type objWithName = { name: string; uid: StringOrNum };
+// const logDetails = (uid: string | number, item: string) => {
+//   console.log(`${item} has uid of ${uid}`);
 // };
+const logDetails = (uid: StringOrNum, item: string) => {
+  console.log(`${item} has uid of ${uid}`);
+};
 
-// add(5, 10);
-// if no default value for c? (optional parameter)
-// const add = (a: number, b: number, c?: number | string) => {
-//   console.log(a + b);
-//   console.log(c);
+// const greet = (user: { name: string; uid: string | number }) => {
+//   console.log(`${user.name} says hello`);
 // };
-
-// if default value is given no need for c?
-const add = (a: number, b: number, c: number | string = 10): void => {
-  console.log(a + b);
-  console.log(c);
+const greet = (user: { name: string; uid: StringOrNum }) => {
+  console.log(`${user.name} says hello`);
 };
-
-add(5, 10, 'sadf');
-
-// you can set the type of return after parenthesis with :type
-const minus = (a: number, b: number): number => {
-  return a + b;
+const greetAgain = (user: objWithName) => {
+  console.log(`${user.name} says hello`);
 };
-
-// result type will be set to number
-let result = minus(10, 7);
-// result = 'something else';
