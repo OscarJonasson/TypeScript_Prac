@@ -1,16 +1,25 @@
 "use strict";
-// const logDetails = (uid: string | number, item: string) => {
-//   console.log(`${item} has uid of ${uid}`);
-// };
-const logDetails = (uid, item) => {
-    console.log(`${item} has uid of ${uid}`);
+// let greet: Function;
+// example 1
+let greet;
+greet = (name, greeting) => {
+    console.log(`${name} says ${greeting}`);
 };
-// const greet = (user: { name: string; uid: string | number }) => {
-//   console.log(`${user.name} says hello`);
-// };
-const greet = (user) => {
-    console.log(`${user.name} says hello`);
+// example 2
+let calc;
+// must return a number in all cases so the else is needed to return substrc if add is not given
+calc = (numOne, numTwo, action) => {
+    if (action === 'add') {
+        return numOne + numTwo;
+    }
+    else {
+        return numOne - numTwo;
+    }
 };
-const greetAgain = (user) => {
-    console.log(`${user.name} says hello`);
+// example 3
+let logDetails;
+// logDetails = (ninja: { name: string; age: number }) => {
+//   console.log(`${ninja.name} is ${ninja.age} years old`);
+logDetails = (ninja) => {
+    console.log(`${ninja.name} is ${ninja.age} years old`);
 };
