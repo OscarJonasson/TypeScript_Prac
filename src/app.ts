@@ -1,22 +1,37 @@
-// ! if you are certain that it will exist
-// const anchor = document.querySelector('a')!;
-// if (anchor) {
-//   // could possibly be null so, possible fix is if
-//   console.log(anchor.href);
-// }
+// Classes
+class Invoice {
+  client: string;
+  details: string;
+  amount: number;
 
-// console.log(anchor.href);
+  constructor(c: string, d: string, a: number) {
+    this.client = c;
+    this.details = d;
+    this.amount = a;
+  }
 
-// form grab
+  format() {
+    return `${this.client} owes £${this.amount} for ${this.details}`;
+  }
+}
 
-// const form = document.querySelector('form')!;
+const invOne = new Invoice('mario', 'work on the mario website', 250);
+const invTwo = new Invoice('luigi', 'work on the luigi website', 300);
 
-// const form = document.querySelector('.new-item-form')!;
+// console.log(invOne, invTwo);
 
-// typeCasting
-// const form = document.querySelector('.new-item-form')!;
+let invoices: Invoice[] = [];
+// invoices.push('hello');
+invoices.push(invOne);
+invoices.push(invTwo);
+
+// Might want to limit these, see lesson13
+invOne.client = 'yoshi';
+invTwo.amount = 600;
+
+console.log(invoices);
+
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
-// console.log(form.children);
 
 // inputs
 const type = document.querySelector('#type') as HTMLSelectElement;
