@@ -1,16 +1,26 @@
 // Classes
 class Invoice {
-  client: string;
-  details: string;
-  amount: number;
+  //   readonly client: string;
+  //   // if private can only be accessed inside the class
+  //   private details: string;
+  //   public amount: number;
 
-  constructor(c: string, d: string, a: number) {
-    this.client = c;
-    this.details = d;
-    this.amount = a;
-  }
+  //   constructor(c: string, d: string, a: number) {
+  //     this.client = c;
+  //     this.details = d;
+  //     this.amount = a;
+  //   }
+
+  // Shorthand, you need to use the access modifiers for this to work
+
+  constructor(
+    readonly client: string,
+    private details: string,
+    public amount: number
+  ) {}
 
   format() {
+    // this.client = `something else`;
     return `${this.client} owes £${this.amount} for ${this.details}`;
   }
 }
@@ -25,11 +35,19 @@ let invoices: Invoice[] = [];
 invoices.push(invOne);
 invoices.push(invTwo);
 
-// Might want to limit these, see lesson13
-invOne.client = 'yoshi';
-invTwo.amount = 600;
-
-console.log(invoices);
+invoices.forEach((inv) => {
+  // readonly inside the class, can still read it (console log)
+  //   inv.client = 'something else';
+  console.log(inv.client, inv.amount, 'Whole invoice:', inv.format());
+  //without private
+  //   console.log(
+  //     inv.client,
+  //     inv.details,
+  //     inv.amount,
+  //     'Whole invoice:',
+  //     inv.format()
+  //   );
+});
 
 const form = document.querySelector('.new-item-form') as HTMLFormElement;
 

@@ -17,9 +17,9 @@ let invoices = [];
 // invoices.push('hello');
 invoices.push(invOne);
 invoices.push(invTwo);
-invOne.client = 'yoshi';
-invTwo.amount = 600;
-console.log(invoices);
+invoices.forEach((inv) => {
+    console.log(inv.client, inv.details, inv.amount, 'Whole invoice:', inv.format());
+});
 const form = document.querySelector('.new-item-form');
 // inputs
 const type = document.querySelector('#type');
